@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
+//Função para cálculo de juros simples, armazenando a resposta em resSimples declarado na main, retornando 2 valores
 void jurosSimples(float valorI, float taxa, int tempo, float* resSimples){
     float juros, mFinal;
 
@@ -10,7 +10,7 @@ void jurosSimples(float valorI, float taxa, int tempo, float* resSimples){
     resSimples[0] = juros;
     resSimples[1] = mFinal;
 }
-
+//Função para cálculo de juros compostos, armazenando a resposta em resComposto declarado na main, retornando 2 valores
 void jurosComposto(float valorI, float taxa, int tempo, float* resComposto){
     float juros, mFinal;
 
@@ -25,42 +25,47 @@ int main(){
     int tempo;
     float resSimples[2], resComposto[2];
 
-    printf("Entre com o valor a ser investido: ");
-    scanf("%f", &valorI);
-    while (tempo < 0)
-    {
-        printf("Entre com o valor a ser investido valido: ");
-        scanf("%f", &valorI);
+    printf("Calculadora de juros\n\n");
 
+    printf("Informe o valor inicial investido: R$ ");
+    scanf("%f", &valorI);
+    while (valorI <= 0)
+    {
+        printf("Valor invalido. Informe o valor inicial investido novamente: R$ ");
+        scanf("%f", &valorI);
     }
 
-    printf("Entre com o valor da taxa de investimento:");
+    printf("Informe a taxa de juros: ");
     scanf("%f", &taxa);
     while (taxa < 0 || taxa >= 1) 
     {
-        printf("Entre com o valor da taxa de investimento valido: ");
+        printf("Taxa de juros invalida. Informe a taxa de juros novamente: ");
         scanf("%f", &taxa);
-
     }
 
-    printf("Entre com o tempo em meses de aplicacao: ");
+    printf("Informe o tempo de aplicacao (em meses): ");
     scanf("%d", &tempo);
-    while (tempo < 1)
+    while (tempo <= 0)
     {
-        printf("Entre com o tempo em meses de aplicacao valido: ");
+        printf("Tempo de aplicacao invalido. Informe o tempo de aplicacao novamente (em meses): ");
         scanf("%d", &tempo);
-
     }
 
     jurosSimples(valorI, taxa, tempo, resSimples);
-    printf("\n\t\tJUROS SIMPLES\n");
-    printf("Juros: %.2f\n", resSimples[0]);
-    printf("Montante final: %.2f\n", resSimples[1]);
+    printf("\nJuros simples\n");
+    printf("Valor inicial investido: R$ %.2f\n", valorI);
+    printf("Taxa de juros: %.2f%% ao mes\n", taxa*100);
+    printf("Tempo de aplicacao: %d meses\n", tempo);
+    printf("Juros: R$ %.2f\n", resSimples[0]);
+    printf("Montante final: R$ %.2f\n", resSimples[1]);
 
     jurosComposto(valorI, taxa, tempo, resComposto);
-    printf("\n\t\tJUROS COMPOSTO\n");
-    printf("Juros: %.2f", resComposto[0]);
-    printf("\nMontante Final: %.2f", resComposto[1]);
+    printf("\nJuros compostos\n");
+    printf("Valor inicial investido: R$ %.2f\n", valorI);
+    printf("Taxa de juros: %.2f%% ao mes\n", taxa*100);
+    printf("Tempo de aplicacao: %d meses\n", tempo);
+    printf("Juros: R$ %.2f\n", resComposto[0]);
+    printf("Montante final: R$ %.2f\n", resComposto[1]);
 
     return 0;
 }
