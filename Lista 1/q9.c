@@ -27,8 +27,22 @@ int main(){
 
     printf("Entre com o valor a ser investido: ");
     scanf("%f", &valorI);
+    while (tempo < 0)
+    {
+        printf("Entre com o valor a ser investido valido: ");
+        scanf("%f", &valorI);
+
+    }
+
     printf("Entre com o valor da taxa de investimento:");
     scanf("%f", &taxa);
+    while (taxa < 0 || taxa >= 1) 
+    {
+        printf("Entre com o valor da taxa de investimento valido: ");
+        scanf("%f", &taxa);
+
+    }
+
     printf("Entre com o tempo em meses de aplicacao: ");
     scanf("%d", &tempo);
     while (tempo < 1)
@@ -39,12 +53,14 @@ int main(){
     }
 
     jurosSimples(valorI, taxa, tempo, resSimples);
-    printf("%.2f", resSimples[0]);
-    printf("\n%.2f", resSimples[1]);
+    printf("\n\t\tJUROS SIMPLES\n");
+    printf("Juros: %.2f\n", resSimples[0]);
+    printf("Montante final: %.2f\n", resSimples[1]);
 
     jurosComposto(valorI, taxa, tempo, resComposto);
-    printf("%.2f", resComposto[0]);
-    printf("\n%.2f", resComposto[1]);
+    printf("\n\t\tJUROS COMPOSTO\n");
+    printf("Juros: %.2f", resComposto[0]);
+    printf("\nMontante Final: %.2f", resComposto[1]);
 
     return 0;
 }
