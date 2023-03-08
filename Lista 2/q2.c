@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 
-#define SENHA 1234
+#define SENHA "1234"
 
 int seqNumerica(char string[]){
     int tamanho = strlen(string);
@@ -29,6 +29,13 @@ int main(){
         printf("A senha precisa ter 4 algarismos, entre novamente: ");
         scanf("%s", &senha);
         isNumerico = seqNumerica(senha);
+    }
+
+    if(strcmp(senha,SENHA)==0){
+        printf("A senha esta correta");
+    }
+    else{
+        printf("A senha esta incorreta");
     }
 
     return 0;
