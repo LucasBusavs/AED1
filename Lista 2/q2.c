@@ -32,10 +32,10 @@ int main(){
     }
 
     if(strcmp(senha,SENHA)==0){
-        printf("A senha esta correta");
+        printf("ACESSO PERMITIDO");
     }
     else{
-        printf("A senha esta incorreta");
+        printf("ACESSO NEGADO");
     }
 
     return 0;
