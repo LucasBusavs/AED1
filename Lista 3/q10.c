@@ -5,7 +5,7 @@ int main(){
     float saldoI, saldoF;
     float valor;
     int op;
-    int mov[] = {0,0,0,0};
+    int mov[] = {0,0,0,0};  // Inicializando vetor nulo de tamanho 4, uma para cada transação
 
     printf("Entre com o saldo inicial da conta: R$");
     scanf("%f", &saldoI);
@@ -20,7 +20,7 @@ int main(){
         printf("4 - Transferencia em pix\n");
         printf("5 - Sair\n");
         scanf("%d",&op);
-        while (op<1 || op>5)
+        while (op<1 || op>5)    //Intervalo bem definido, sendo de 1 a 5
         {
             printf("Entre com uma opcao valida: ");
             scanf("%d",&op);
@@ -70,7 +70,7 @@ int main(){
             saldoF -= valor;
             mov[3]++; 
         }
-    }while(op!=5);
+    }while(op!=5);  //Opção 5 para saida
     printf("Saldo final: R$%.2f\n", saldoF);
     if(saldoF==0){
         printf("CONTA ZERADA\n");    

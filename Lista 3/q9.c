@@ -16,12 +16,12 @@ int main(){
         }
 
         if(compra==0){
-            break;
+            break;  //Interrompe ja de inicio o programa, caso de entrada com o valor de saida
         }
 
         printf("Entre com o valor de venda do item %d: ",i);
         scanf("%f",&venda);
-        while(venda<0 || compra>venda){
+        while(venda<0 || compra>venda){     //Não permite valores ilógicos e prejuizo
             printf("Valor invalido. Entre com o valor valido de venda do item %d: ",i);
             scanf("%f",&venda); 
         }
@@ -30,7 +30,7 @@ int main(){
         vendaT += venda;
 
         lucro = (venda-compra)/compra;
-
+        // Sufixo 'f' usado para resolver problema de comparação
         if(lucro<0.1f){
             l1++;
         }
@@ -42,7 +42,7 @@ int main(){
         }
 
         i++;
-    }while(1);
+    }while(1);  // Loop infinito, a menos que seja digitado 0 para valor de compra, interrompe apos inserção do valor.
 
     lucroT = (vendaT-compraT)/compraT;
 

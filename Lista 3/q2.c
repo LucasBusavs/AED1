@@ -8,17 +8,17 @@ int main(){
 
     printf("Entre com o valor de n para o calculo da serie:" );
     scanf("%d",&n);
-    while (n<=0)
+    while (n<=0)    //Validação
     {
         printf("Entre com o valor de n novamente:" );
         scanf("%d",&n);
     }
 
     while(i<=n){
-        if(i==1){
+        if(i==1){   // Primeiro termo
             soma = i/(float) i;
         }
-        else{
+        else{       // Restante  
             soma += (i+i-1)/(float) (i);
         }
         i++;

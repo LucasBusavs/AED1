@@ -21,12 +21,12 @@ int main(){
     }
 
     for(int i=1;i<=m;i++){
-        if(i%2 == 1){
+        if(i%2 == 1){   //Crescente para as linhas impares
             for(int j=0;j<=n;j++){
                 printf("%d ", j);
             }
         }
-        else{
+        else{       //Descrescente para as linhas pares
             for(int j=n;j>=0;j--){
                 printf("%d ", j);
             }

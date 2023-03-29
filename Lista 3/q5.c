@@ -8,7 +8,7 @@ int main(){
     
     printf("Entre com um numero: ");
     scanf("%d",&n);
-    while(n!=-9999){
+    while(n!=-9999){    // O valor de saida -9999 não conta
         i++;
         if(n==0){
             zeros++;

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main(){
-    float notas[10];
+    float notas[10];    //Array para receber as notas de 10 alunos
     float med = 0;
     float maior = 0, menor = 100;
     int apr = 0, repr = 0;
@@ -10,7 +10,7 @@ int main(){
     for(int i=0;i<10;i++){
         printf("Entre com a nota final do aluno %d: ",i+1);
         scanf("%f", &notas[i]);
-        while (notas[i]<0 || notas[i]>100)
+        while (notas[i]<0 || notas[i]>100)  //Definição do intervalo de 0 a 100
         {
             printf("Entre com a nota final valida do aluno %d: ",i+1);
             scanf("%f", &notas[i]);
@@ -34,7 +34,7 @@ int main(){
             repr++;
         }
     }
-    med /= (float)10;
+    med /= 10;
     printf("Media: %.1f\n",med);
     printf("Maior nota: %.1f\n",maior);
     printf("Menor nota: %.1f\n",menor);

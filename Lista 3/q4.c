@@ -15,10 +15,10 @@ int main(){
         else if(n>0){
             pos++;
         }
-        else if(n<0 && n!= -9999){
+        else if(n<0 && n!= -9999){      // Desconsidera o valor de saida -9999
             neg++;
         }
-    }while (n!=-9999); //-9999 conta?
+    }while (n!=-9999);
 
     printf("Foram %d numeros positivos\n",pos);    
     printf("Foram %d numeros negativos\n",neg);    

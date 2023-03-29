@@ -11,7 +11,7 @@ int main(){
         printf("Entre com um numero inteiro maior que 0: ");
         scanf("%d",&n);
     }
-    while(n<=1000){
+    while(n<=1000){     // Numero pra saida sendo 1000
         if(n%2==0){
             par += n;
         }
@@ -25,7 +25,7 @@ int main(){
             scanf("%d",&n);
         }
     }
-    printf("%d %d",par,impar);
+    printf("Soma dos pares:%d\nSoma dos impares:%d",par,impar);
 
     return 0;
 }
