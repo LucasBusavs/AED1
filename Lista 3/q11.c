@@ -11,7 +11,7 @@ int main(){
         ano++;
     }
 
-    printf("Demora %d anos\n",ano);
+    printf("Demora %d anos\n",ano);     // Resolução em anos
 
     return 0;
 }
