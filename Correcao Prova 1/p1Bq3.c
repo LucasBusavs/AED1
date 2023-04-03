@@ -7,20 +7,23 @@ int main(){
 
     for(int i=1;i<=15;i++){
         printf("Insira o codigo da transicao %d: ",i);
-        scanf("%c",&cod);
+        scanf(" %c",&cod);
+        fflush(stdin);
         while(cod!='V' && cod!='P'){
             printf("Codigo invalido. Insira novamente: ");
             scanf("%c",&cod);
-        }
+            fflush(stdin);
 
+        }
+        
         printf("Entre com o valor da compra: ");
         scanf("%f",&compra);
+        fflush(stdin);
         while(compra<=0){
             printf("Valor de compra invalido. Entre novamente: ");
             scanf("%f",&compra);
+            fflush(stdin);
         }
-        getchar();
-        fflush(stdin);
 
         compraT+=compra;
 
