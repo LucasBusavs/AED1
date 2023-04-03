@@ -7,12 +7,12 @@ int main(){
     for(int i=1;i<=10;i++){
         printf("Entre com o valor de consumo do consumidor %d: ",i);
         scanf("%f",&consumo);
-        while(consumo<0){
+        while(consumo<0){   //Exclui valores negativos
             printf("Valor invalido. Entre com o valor de consumo novamente: ");
             scanf("%f",&consumo);
         }
         if(consumo<30){
-            valorP = 45;
+            valorP = 45; 
         }
         else if(consumo>=30 && consumo<100){
             valorP = 1.9*consumo;
@@ -20,7 +20,7 @@ int main(){
         else{
             valorP = 3.95*consumo;
         }
-        valorP+=14;
+        valorP+=14;     //Atribui taxa de iluminação
         printf("Valor a ser pago por %d: R$%.2f\n",i,valorP);
 
         valorM+=valorP;  //Media parcial

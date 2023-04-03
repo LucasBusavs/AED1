@@ -6,8 +6,7 @@ int main(){
 
     printf("Entre com um valor inteiro positivo maior que 1: ");
     scanf("%d",&n);
-    while (n<=1)
-    {
+    while (n<=1){       //Validação do intervalo
         printf("Invalido. Entre com um valor inteiro positivo maior que 1: ");
         scanf("%d",&n);
     }

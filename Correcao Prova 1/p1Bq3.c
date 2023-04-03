@@ -9,7 +9,7 @@ int main(){
         printf("Insira o codigo da transicao %d: ",i);
         scanf(" %c",&cod);
         fflush(stdin);
-        while(cod!='V' && cod!='P'){
+        while(cod!='V' && cod!='P'){    //Intervalo valido
             printf("Codigo invalido. Insira novamente: ");
             scanf("%c",&cod);
             fflush(stdin);
@@ -19,7 +19,7 @@ int main(){
         printf("Entre com o valor da compra: ");
         scanf("%f",&compra);
         fflush(stdin);
-        while(compra<=0){
+        while(compra<=0){   //Exlcui valorer menores ou igual a 0
             printf("Valor de compra invalido. Entre novamente: ");
             scanf("%f",&compra);
             fflush(stdin);
