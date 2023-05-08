@@ -62,6 +62,6 @@ int main(){
     int *result = neg(vet);
     tam = sizeof(result) / sizeof(result[0]);
     mostra(result, tam);
-    
+
     return 0;
 }
