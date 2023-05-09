@@ -3,33 +3,39 @@
 #include <ctype.h>
 #include <stdbool.h>
 
-bool isPlaca(char *placa){
-    bool verifica = true;
+/*
+Descrição: Função que recebe uma placa e verifica se está no padrão correto
+Parametros: Vetor 'placa' do tipo char
+Return: Retorna um bool, true se estiver no padrão correto, false se estiver fora do padrão
+*/
+bool isPlaca(char placa[]){
     int tamanho = strlen(placa);
 
     if(tamanho!=7){
-        verifica = false;
+        return false;
     }
 
     for(int i=0; i<tamanho; i++){
+        //Verifica as posições que deveriam ser alfabéticas e em UPPERCASE
         if(i>=0 && i<=2 || i == 4){
-            if(isalpha(placa[i])==0){
-                verifica = false;
+            if(!(isalpha(placa[i]))){
+                return false;
             }
             else{
-                if(isupper(placa[i])==0){
-                    verifica = false;
+                if(!(isupper(placa[i]))){
+                    return false;
                 }
             }
         }
+        // Verifica as posições que deveriam ser numeros
         else{
-            if(isdigit(placa[i])==0){
-                verifica = false;
+            if(!(isdigit(placa[i]))){
+                return false;
             }
         }
     }
 
-    return verifica;
+    return true;
 }
 
 int main(){
@@ -41,6 +47,7 @@ int main(){
         scanf("%s",&placa);
         fflush(stdin);
 
+        // Saida do loop
         if(strcmp(placa, "fechar") == 0){
             break;
         }
