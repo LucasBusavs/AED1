@@ -2,14 +2,19 @@
 #include <stdio.h>
 #include <ctype.h>
 
-void upper(char *s1, char *s2){
+/*
+Descrição: Procedimento que coloca duas frases em UPPERCASE 
+Parametros: Vetor 's1' do tipo char, Vetor 's2' do tipo char
+Return: "Retorna" por referencia os vetores em UPPERCASE
+*/
+void upper(char s1[], char s2[]){
     int tamanho1 = strlen(s1);
-    int tamanho2 = strlen(s1);
+    int tamanho2 = strlen(s2);
     int i;
-    for(i = 0; i <= tamanho1; i++){
+    for(i = 0; i < tamanho1; i++){
         s1[i] = toupper(s1[i]);
     }
-    for(i = 0; i <= tamanho2; i++){
+    for(i = 0; i < tamanho2; i++){
         s2[i] = toupper(s2[i]);
     }
 }
