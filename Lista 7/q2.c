@@ -1,36 +1,52 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 #define TAMANHO 10
 
-void recebe(int notas[]){
+/*
+Descrição: Procedimento que recebe e preenche vetor de notas
+Parametros: vetor 'notas' do tipo float
+Return: "Retorna" por referencia o vetor preenchido de notas
+*/
+void recebe(float notas[]){
     for(int i=0; i<TAMANHO; i++){
-        notas[i] = rand() % 10;
-        printf("%d ",notas[i]);
+        printf("Entre com a nota do aluno %d: ", i+1);
+        scanf("%f",&notas[i]);
+        // Definição do intervalo de notas válidas
+        while(notas[i] > 10 || notas[i] < 0){
+            printf("Nota invalida. Entre com a nota do aluno %d entre 0 e 10: ", i+1);
+            scanf("%f",&notas[i]);
+        }
     }
     printf("\n");
 }
 
-void calcula(int notas[]){
+/*
+Descrição: Procedimento que faz o calculo da média das notas, e o quantitativo de alunos que ficaram acima da média
+Parametros: vetor 'notas' do tipo float
+Return: Sem retorno, mas mostras o resultado na tela
+*/
+void calcula(float notas[]){
     float media = 0;
-    int aprovados = 0;
+    int acimaMedia = 0;
 
     for(int i=0; i<TAMANHO; i++){
         media += notas[i];
-        if(notas[i]>=6){
-            aprovados++;
+    }
+    media/=10;
+
+    for(int i=0; i<TAMANHO; i++){
+        if(notas[i] > media){
+            acimaMedia++;
         }
     }
 
-    printf("Media: %.2f\n", media/10);
-    printf("Aprovados: %d\n", aprovados);
+    printf("Media: %.2f\n", media);
+    printf("Acima da media: %d\n", acimaMedia);
 }
 
 int main(){
-    int notas[TAMANHO];
-
-    srand(time(NULL));
+    float notas[TAMANHO];
 
     recebe(notas);
 
