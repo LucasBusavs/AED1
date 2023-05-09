@@ -1,7 +1,13 @@
 #include <string.h>
 #include <stdio.h>
 
+/*
+Descrição: Procedimento que concatena três strings em uma só
+Parametros: Vetor 's1' do tipo char(string), Vetor 's2' do tipo char(string), Vetor 's3' do tipo char(string)
+Return: "Retorna" por referencia os dois vetores preenchidos
+*/
 void concat(char s1[], char s2[], char s3[]){
+    //Variavel dimensionada para o pior caso
     char result[300] = "";
 
     strcat(result, s1);
