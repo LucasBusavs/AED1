@@ -1,6 +1,11 @@
 #include <string.h>
 #include <stdio.h>
 
+/*
+Descrição: Procedimento que lê infinitos nomes e guarda o ultimo e o primeiro, em ordem alfabética
+Parametros: -
+Return: Mostra o ultimo e primeiro nome, em ordem alfabética
+*/
 void nomes(){
     char primeiro[100];
     char ultimo[100];
@@ -12,14 +17,16 @@ void nomes(){
         scanf("%[^\n]",&nome);
         fflush(stdin);
 
+        // Flag para encerrar leitura de nomes
         if(strcmp(nome, "stop")==0){
             break;
         }
 
+        //Primeiro nome lido, sendo o ultimo e o primeiro da "lista" alfabética
         if(i==0){
             strcpy(primeiro, nome);
             strcpy(ultimo, nome);
-            i++;
+            i = 1;
         }
         else{
             if(strcmp(primeiro, nome)>0){
