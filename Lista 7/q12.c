@@ -2,7 +2,12 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int *vogais(char s[], int v[]){
+/*
+Descrição: Procedimento que contabiliza quanto cada vogal aparece em uma string
+Parametros: Vetor 's' do tipo char(string), Vetor 'v' do tipo int
+Return: "Retorna" por referencia o vetor preenchido 'v'
+*/
+void vogais(char s[], int v[]){
     int tam = strlen(s);
     for(int i=0; i<tam; i++){
         s[i] = tolower(s[i]);
@@ -22,21 +27,19 @@ int *vogais(char s[], int v[]){
             v[4]++;
         }
     }
-    return v;
 }
 
 int main(){
     char s[100];
     int v[] = {0,0,0,0,0};
-    int *result;
 
     printf("Entre com uma string: ");
     scanf("%[^\n]", &s);
 
-    result = vogais(s, v);
+    vogais(s, v);
 
     for(int i=0;i<5;i++){
-        printf("%d ", result[i]);
+        printf("%d ", v[i]);
     }
 
     return 0;
