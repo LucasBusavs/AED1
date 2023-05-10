@@ -1,7 +1,12 @@
 #include <string.h>
 #include <stdio.h>
 
-char *eliminaEspacos(char s[]){
+/*
+Descrição: Procedimento que elimina espaços indesejados em uma frase
+Parametros: Vetor 's' do tipo char(string)
+Return: "Retorna" por referencia a frase sem os espaços indesejados
+*/
+void eliminaEspacos(char s[]){
     int tam = strlen(s);
     int flag = 0;
     int v[tam];
@@ -23,24 +28,22 @@ char *eliminaEspacos(char s[]){
 
     for(i = 0; i < j; i++){
         for(int k = 0; k < tam; k++){
-            if(k == v[i]){
+            if(k + i == v[i]){
                 pula++;
             }
             s[k] = s[k + pula - i];
         }
     }
-
-    return s;
 }
 
 int main(){
-    char s[] = "Lucas  de  Souza  Bueno";
-    char *result;
+    char s[100];
 
     printf("Entre com uma frase: ");
     scanf("%[^\n]", &s);
 
-    result = eliminaEspacos(s);
+    eliminaEspacos(s);
+    printf("%s", s);
 
     return 0;
 }
