@@ -34,20 +34,15 @@ void mostra(int v[], int tam){
     printf("\n");
 }
 
-int* neg(int v[]){
-    int tam = 0;
-    int i;
+/*
+Descrição: Procedimento que copia apenas os valores negativos do vetor 'v' para o vetor 'result'
+Parametros: Vetor 'v' do tipo int, Vetor 'result' do tipo int, tamanho de 'result' tambem do tipo int
+Return: "Retorna" o vetor 'result' preenchido
+*/
+void neg(int v[], int result[], int tam){
     int ultPos = -1;
-    
-    for(i=0; i<TAM;i++){
-        if(v[i]<0){
-            tam++;
-        }
-    }
 
-    int result[tam];
-
-    for(i=0; i<tam;i++){
+    for(int i=0; i<tam;i++){
         for(int j=0; j<TAM;j++){
             if(v[j]<0){
                 if(ultPos<j){
@@ -58,19 +53,24 @@ int* neg(int v[]){
             }
         }
     }
-    return result;
 }
 
 int main(){
     int vet[TAM];
+    int tam = 0;
     srand(time(NULL));
 
     preenche(vet);
-
     mostra(vet, TAM);
 
-    int *result = neg(vet);
-    int tam = sizeof(result) / sizeof(result[0]);
+    for(int i=0; i<TAM;i++){
+        if(vet[i]<0){
+            tam++;
+        }
+    }
+    int result[tam];
+
+    neg(vet, result, tam);
     mostra(result, tam);
 
     return 0;
