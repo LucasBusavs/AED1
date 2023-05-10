@@ -2,18 +2,29 @@
 #include <time.h>
 #include <stdlib.h>
 
+/*
+Descrição: Procedimento que preenche vetor float com valores pseudo-aleatorios, com as temperaturas do mês de Janeiro
+Parametros: Vetor 'jan' do tipo float
+Return: "Retorna" por referencia o vetor preenchido
+*/
 void preenche(float jan[]){
     int tamInter = 40 - 15;
     float randN;
     for(int i=0; i<31; i++){
-        randN = (float)rand() / (float)RAND_MAX;
-        randN = randN * tamInter + 15;
+        randN = rand() / (float)RAND_MAX;   //Gera numeros entre 0 e 1
+        randN = randN * tamInter + 15;      //Calcula uma temperatura entre 15 e 40, do tipo float
         jan[i] = randN;
         printf("%.2f ", jan[i]);
     }
     printf("\n");
 }
 
+/*
+Descrição: Procedimento que calcula a temperatura média, a maior e a menor temperatura, e por fim, contabiliza os dias que tiveram uma
+temperatura menor que a média.
+Parametros: Vetor 'jan' do tipo float
+Return: Mostra na tela os resultados
+*/
 void calcula(float jan[]){
     float menor = 40, maior = 15;
     float media = 0;
