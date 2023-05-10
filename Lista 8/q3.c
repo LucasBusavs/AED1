@@ -29,7 +29,6 @@ void calculaC(int n, int m, int a[n][m], int b[n][m]){
     }
 
     mostraMatriz(n, m, c);
-
 }
 
 int main(){
@@ -47,6 +46,7 @@ int main(){
     inicializaMatriz(n, m, a);
     mostraMatriz(n, m, a);
     printf("\n");
+
     inicializaMatriz(n, m, b);
     mostraMatriz(n, m, b);
     printf("\n");

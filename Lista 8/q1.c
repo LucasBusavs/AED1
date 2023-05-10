@@ -6,7 +6,6 @@ void leia(int m, int n, int r[m][n]){
             scanf("%d",&r[i][j]);
         }
     }
-
 }
 
 void mostra(int m, int n, int r[m][n]){

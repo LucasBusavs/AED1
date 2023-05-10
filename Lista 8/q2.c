@@ -52,11 +52,9 @@ int main(){
     int s[m];
 
     inicializaMatriz(m, a);
-
     mostraMatriz(m, a);
 
     diagonal(m, a, s);
-
     mostraVetor(m, s);
 
     return 0;
