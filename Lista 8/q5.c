@@ -3,15 +3,24 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+/*
+Descrição: Procedimento para inicialização de elementos inteiros de uma matriz m x m
+Parametros: int m, int r[m][m]
+Retorno: "Retorna" por referencia a matriz r preenchida
+*/
 void preenche(int m, int r[m][m]){
     for(int i=0; i<m;i++){
         for(int j=0;j<m;j++){
-            r[i][j] = rand() % 2;
-            //scanf("%d",&r[i][j]);
+            r[i][j] = rand() % 2;   // 0 - 1
+            //scanf("%d",&r[i][j]); // Opção para entrada via usuario
         }
     }
 }
 
+/*
+Descrição: Procedimento para printar uma matriz m x m
+Parametros: int m, int r[m][m]
+*/
 void mostra(int m, int r[m][m]){
     for(int i=0; i<m;i++){
         for(int j=0;j<m;j++){
@@ -21,12 +30,17 @@ void mostra(int m, int r[m][m]){
     }
 }
 
+/*
+Descrição: Função para verificar se uma matriz é de permutação
+Parametros: int m, int r[m][m]
+Retorno: Retorna false se não for de permutação, e true se for de permutação
+*/
 bool permutacao(int m, int r[m][m]){
     int flag = 0;
     //Verifica linha
     for(int i=0; i<m;i++){
         for(int j=0;j<m;j++){
-            if(r[i][j] && flag){
+            if(r[i][j] && flag){    //Não permite ter mais que 1 termo igual a 1 na linha
                 return false;
             }
             else if(r[i][j]){
@@ -41,7 +55,7 @@ bool permutacao(int m, int r[m][m]){
     //Verifica coluna
     for(int j=0; j<m;j++){
         for(int i=0;i<m;i++){
-            if(r[i][j] && flag){
+            if(r[i][j] && flag){    //Não permite ter mais que 1 termo igual a 1 na coluna
                 return false;
             }
             else if(r[i][j]){
