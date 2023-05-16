@@ -7,7 +7,7 @@ Descrição: Função contabiliza quantidade de alfanuméricos em uma string
 Parametros: vetor do tipo char(string)
 Return: Retorna variavel inteira com a quantidade de alfanuméricos
 */
-int alphaNum(char *s){
+int alphaNum(char s[]){
     int qnt = 0;
     int size = strlen(s);
     for(int i=0; i<size; i++){

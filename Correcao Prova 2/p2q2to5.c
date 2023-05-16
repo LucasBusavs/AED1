@@ -3,6 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <time.h>
+#include <stdlib.h>
 
 float q2(float vet[]){
     float pri = vet[0], seg = vet[0];
@@ -115,6 +116,9 @@ int main(){
             valido = q3(s);
             if(valido){
                 printf("Valido\n");
+            }
+            else{
+                printf("Invalido\n");
             }
         }
         else if(op == 4){
