@@ -60,13 +60,9 @@ void alteracao(int m, int r[m][m]){
     for(int i=0; i<m;i++){
         for(int j=0; j<m;j++){
             if(i == j){
-                
-            }
-            //Troca linha 5 com coluna 10
-            else if(i == 4){
                 aux[j] = r[i][j];
-                r[i][j] = r[j][9];
-                r[j][9] = aux[j];
+                r[i][j] = r[i][m-1-j];
+                r[i][m-1-j] = aux[j];
             }
         }
     }
