@@ -2,15 +2,24 @@
 #include <time.h>
 #include <stdlib.h>
 
+/*
+Descrição: Procedimento para inicialização de elementos inteiros de uma matriz m x m
+Parametros: int m, int r[m][m]
+Retorno: "Retorna" por referencia a matriz r preenchida
+*/
 void preenche(int m, int r[m][m]){
     for(int i=0; i<m;i++){
         for(int j=0;j<m;j++){
-            r[i][j] = rand() % 10;
-            //scanf("%d",&r[i][j]);
+            r[i][j] = rand() % 10;  // 0 - 9
+            //scanf("%d",&r[i][j]); // Input do usuario
         }
     }
 }
 
+/*
+Descrição: Procedimento para printar uma matriz m x m
+Parametros: int m, int r[m][m]
+*/
 void mostra(int m, int r[m][m]){
     for(int i=0; i<m;i++){
         for(int j=0;j<m;j++){
@@ -21,6 +30,10 @@ void mostra(int m, int r[m][m]){
     printf("\n");
 }
 
+/*
+Descrição: Procedimento para calcular e mostrar a soma dos elementos da triangular inferior
+Parametros: int m, int r[m][m]
+*/
 void calcula(int m, int r[m][m]){
     int soma = 0;
     int aux = 1;
