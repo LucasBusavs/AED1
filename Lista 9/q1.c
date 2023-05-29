@@ -11,6 +11,7 @@ struct livro{
 void cadastro(int n, struct livro livros[]){
     for(int i=0;i<n;i++){
         livros[i].id = i+1;
+        getchar();
         printf("Entre com o titulo do livro %d: ",i+1);
         gets(livros[i].titulo);
         printf("Entre com o autor do livro %d: ",i+1);
