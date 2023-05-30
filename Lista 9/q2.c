@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void grava(){
     int n = 1;
@@ -19,10 +20,17 @@ void grava(){
 
 void soma(){
     int soma = 0;
+    int aux;
     FILE *f = fopen("numeros.txt", "r");
     if(!f){
-        
+        printf("Error\n");
+        exit(1);
     }
+    while(fscanf(f, "%d\n", &aux) != EOF){
+        soma += aux;
+    }
+    fclose(f);
+    printf("Soma: %d\n", soma);
 }
 
 int main(){
@@ -44,14 +52,12 @@ int main(){
             scanf("%d", &op);
             fflush(stdin);
         }
-        if (op == 2 && !flag){
-            printf("Grave ao menos um numero primeiro, 0 caso seja um arquivo existente\n");
-        }
-        else if(op == 1){
+        if(op == 1){
             grava();
+            flag = 1;
         }
         else if(op == 2){
-
+            soma();
         }
         else if(op == 3){
 
