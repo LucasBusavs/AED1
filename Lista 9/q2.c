@@ -33,6 +33,22 @@ void soma(){
     printf("Soma: %d\n", soma);
 }
 
+void lerHTML(){
+    char c;
+    FILE *f = fopen("1.html", "r");
+    if(!f){
+        printf("Error\n");
+        exit(1);
+    }
+    c = fgetc(f);
+    while(c != EOF){
+        printf("%c", c);
+        c = fgetc(f);
+    }
+    fclose(f);
+    printf("FIM...\n");
+}
+
 int main(){
     int op;
     int flag = 0;
@@ -60,7 +76,7 @@ int main(){
             soma();
         }
         else if(op == 3){
-
+            lerHTML();
         }
         else if(op == 4){
 
