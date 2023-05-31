@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void grava(){
     int n = 1;
@@ -49,6 +50,33 @@ void lerHTML(){
     printf("FIM...\n");
 }
 
+void backupHTML(){
+    char nome[100];
+    char c;
+    FILE *f, *backup;
+    printf("Entre com o nome do arquivo backup: ");
+    gets(nome);
+    strcat(nome, ".html");
+    printf("%s\n", nome);
+    f = fopen("1.html", "r");
+    backup = fopen(nome, "w");
+    if(!f){
+        printf("Error\n");
+        exit(1);
+    }
+    else if(!backup){
+        printf("Error in backup\n");
+        exit(1);
+    }
+    c = fgetc(f);
+    while(c != EOF){
+        fputc(c, backup);
+        c = fgetc(f);
+    }
+    fclose(f);
+    fclose(backup);
+}
+
 int main(){
     int op;
     int flag = 0;
@@ -79,7 +107,7 @@ int main(){
             lerHTML();
         }
         else if(op == 4){
-
+            backupHTML();
         }
         printf("\n");
     }while(op != 0);
