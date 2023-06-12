@@ -1,5 +1,23 @@
 #include <stdio.h>
 
+long int quantidade(int n, int k, int x[]){
+    long int qnt = 0;
+    int soma = 0;
+    for(int i = 0; i<n; i++){
+        soma = 0;
+        for(int j = i; j<n; j++){
+            soma += x[j];
+            if(soma == k){
+                qnt++;
+                break;
+            }
+            else if(soma > k){
+                break;
+            }
+        }
+    }
+    return qnt;
+}
 
 int main(){
     int n, k;
@@ -13,6 +31,7 @@ int main(){
             scanf("%d", &x[i]);
         }while(x[i]<0 || x[i]>100);
     }
-    
+    saida = quantidade(n, k, x);
+    printf("%ld", saida);
     return 0;
 }
