@@ -9,7 +9,6 @@ long int quantidade(int n, int k, int x[]){
             soma += x[j];
             if(soma == k){
                 qnt++;
-                break;
             }
             else if(soma > k){
                 break;
