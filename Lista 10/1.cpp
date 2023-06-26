@@ -13,6 +13,14 @@ class Data {
         int min;
     
     public:
+        Data(){
+            dia = 1;
+            mes = 1;
+            ano = 1;
+            hora = 0;
+            min = 0;
+        }
+        
         int getDia(){return dia;}
         int getMes(){return mes;}
         int getAno(){return ano;}
@@ -99,9 +107,74 @@ class Data {
 };
 
 class Cliente{
-    string nome;
-    string cpf;
-    Data cadastro;
+    private:
+        string nome;
+        string cpf;
+        Data cadastro;
+
+    public:
+        Cliente(){
+            nome = "";
+            cpf = "";
+        }
+
+        string getNome(){ return nome;}
+        string getCPF(){ return cpf;}
+        Data getCadastro(){ return cadastro; }
+        
+        void cadastrar(){
+            string nome, cpf;
+            int dia, mes, ano;
+            int hora, min;
+            cout << "Entre com o nome do cliente: ";
+            cin >> nome;
+            while(!setNome(nome)){
+                cout << "Nome invalido, Entre novamente: ";
+                cin >> nome;
+            }
+            cout << "Entre com o CPF do cliente: ";
+            cin >> cpf;
+            while(!setCPF(cpf)){
+                cout << "CPF invalido, Entre novamente: ";
+                cin >> cpf;
+            }
+            cout << "Entre com a data do cadastro(dia mes ano): ";
+            cin >> dia >> mes >> ano;
+            while(!cadastro.setData(dia, mes, ano)){
+                cout << "Data invalida. Entre novamente com a data do cadastro(dia mes ano): ";
+                cin >> dia >> mes >> ano;
+            }
+            cout << "Entre com o horario do cadastro(hora minuto): ";
+            cin >> hora >> min;
+            while(!cadastro.setHorario(hora, min)){
+                cout << "Horario invalido. Entre novamente com o horario do cadastro(hora minuto): ";
+                cin >> hora >> min;
+            }
+            cout << "CADASTRO REALIZADO COM SUCESSO" << endl;
+        }
+
+        void info(){
+            cout << "Nome: " << nome << endl;
+            cout << "CPF: " << cpf << endl;
+            cadastro.mostraData();
+            cadastro.mostraHorario();
+        }
+
+    private:
+        bool setNome(string nome){
+            if(nome.length() > 0){
+                this->nome = nome;
+                return true;
+            }
+            return false;
+        }
+        bool setCPF(string cpf){
+            if(cpf.length() == 11){
+                this->cpf = cpf;
+                return true;
+            }
+            return false;
+        }
 };
 
 class Veiculos {
@@ -118,6 +191,8 @@ class Veiculos {
 
 int main(){
     Data data;
+    Cliente cliente;
+    /*
     int dia, mes, ano;
     int hora, min;
     cout << "running"<<endl;
@@ -131,7 +206,9 @@ int main(){
         cin >> hora >> min;
     }
     data.mostraHorario();
-
+    */
+    //cliente.cadastrar();
+    cliente.info();
 
     return 0;
 }
